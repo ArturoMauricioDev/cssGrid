@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Columnas</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        
+        .container {
+            display: grid;
+            /* grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 300px 300px; */
+            /* grid-template: 200px 100px / 1fr 2fr 1fr;
+            grid-template: 200px 100px / repeat(4, 1fr); */
+            /* grid-template: 200px 100px / repeat(4, minmax(200px, 1fr)); */
+            /* grid-column-gap: 30px;
+            row-gap: 30px; */
+            height: 100vh;
+            grid-template: 150px 1fr 90px / 200px 1fr;
+            gap: 10px 10px;
+            grid-template-areas: "header header" "left content" "footer footer";
+        }
+        
+        .header {
+            grid-area: header;
+        }
+        
+        .left {
+            grid-area: left;
+        }
+        
+        .content {
+            grid-area: content;
+        }
+        
+        .footer {
+            grid-area: footer;
+        }
+        
+        .item {
+            border: 1px red solid;
+        }
+        
+        .item:nth-of-type(4) {
+            background: yellow;
+            overflow: auto;
+            display: grid;
+            grid-template: 50% 50% / 25% 50% 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="container">
+        <div class="item header"> header</div>
+        <div class="item left"> left</div>
+        <div class="item content"> Content</div>
+        <div class="item footer">footer</div>
+    </section>
+</body>
+
+</html>
